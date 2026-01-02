@@ -4,3 +4,13 @@ body{
 .task10{
     background-color: blue;
 }
+
+.task11 {
+      border: 2px solid black;
+    }
+
+    /* Inner elements style */
+    .item {
+      border: 1px dotted black;
+    }
+  
