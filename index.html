@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Yadav - Internship Tasks Portfolio</title>
+    <meta name="description"
+        content="Portfolio showcase of 25 internship tasks demonstrating web development skills in HTML, CSS, and JavaScript">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141b3d;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --accent: #667eea;
+            --accent-hover: #764ba2;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.4) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 10px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            margin: 30px auto;
+            border-radius: 2px;
+            animation: scaleIn 0.6s ease-out 0.4s backwards;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            animation: fadeIn 1s ease-out 0.6s backwards;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Search & Filter */
+        .controls {
+            margin: 40px 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Tasks Grid */
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        .task-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .task-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .task-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .task-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .task-card:nth-child(3n+1)::before {
+            background: var(--gradient-1);
+        }
+
+        .task-card:nth-child(3n+2)::before {
+            background: var(--gradient-2);
+        }
+
+        .task-card:nth-child(3n)::before {
+            background: var(--gradient-3);
+        }
+
+        .task-number {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            background: rgba(102, 126, 234, 0.15);
+            color: var(--accent);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .task-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .task-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .task-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+        }
+
+        .task-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .task-link:hover {
+            gap: 12px;
+            color: var(--accent-hover);
+        }
+
+        .task-link::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading state */
+        .task-card.hidden {
+            display: none;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Pratik Yadav</h1>
+                <p class="subtitle">8th Semester Internship Tasks Portfolio</p>
+                <div class="divider"></div>
+            </div>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Completion</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search tasks..." onkeyup="filterTasks()">
+            </div>
+        </div>
+
+        <div class="tasks-grid" id="tasksGrid">
+            <!-- Task 1-15 -->
+            <div class="task-card" data-keywords="html css table form iframe video list blockquote">
+                <span class="task-number">Task 1-15</span>
+                <h3 class="task-title">HTML Fundamentals Collection</h3>
+                <p class="task-description">Comprehensive collection of 15 HTML tasks including text formatting, tables,
+                    lists, forms, iframes, videos, and styling.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                </div>
+                <a href="Task 1-15/tasks.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 16 -->
+            <div class="task-card" data-keywords="html basic">
+                <span class="task-number">Task 16</span>
+                <h3 class="task-title">HTML Document Structure</h3>
+                <p class="task-description">Basic HTML document structure and semantic markup demonstration.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                </div>
+                <a href="Task-16/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 17 -->
+            <div class="task-card" data-keywords="html navigation contact form">
+                <span class="task-number">Task 17</span>
+                <h3 class="task-title">Multi-Page Website</h3>
+                <p class="task-description">Multi-page website with navigation, homepage, and contact form
+                    implementation.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-17/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 18 -->
+            <div class="task-card" data-keywords="html javascript interactive">
+                <span class="task-number">Task 18</span>
+                <h3 class="task-title">Interactive Web Page</h3>
+                <p class="task-description">Interactive HTML page with JavaScript functionality and user interactions.
+                </p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-18/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 19 -->
+            <div class="task-card" data-keywords="javascript functions logic">
+                <span class="task-number">Task 19</span>
+                <h3 class="task-title">JavaScript Functions</h3>
+                <p class="task-description">JavaScript programming demonstrating functions, logic, and core concepts.
+                </p>
+                <div class="task-tech">
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-19/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 20 -->
+            <div class="task-card" data-keywords="javascript dom manipulation">
+                <span class="task-number">Task 20</span>
+                <h3 class="task-title">DOM Manipulation</h3>
+                <p class="task-description">JavaScript DOM manipulation and dynamic content updates.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-20/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 21 -->
+            <div class="task-card" data-keywords="javascript algorithms">
+                <span class="task-number">Task 21</span>
+                <h3 class="task-title">JavaScript Algorithms</h3>
+                <p class="task-description">Implementation of various JavaScript algorithms and problem-solving
+                    techniques.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-21/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 22 -->
+            <div class="task-card" data-keywords="html javascript interactive form">
+                <span class="task-number">Task 22</span>
+                <h3 class="task-title">Interactive Forms</h3>
+                <p class="task-description">Advanced form handling with JavaScript validation and user feedback.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-22/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 23 -->
+            <div class="task-card" data-keywords="html javascript events">
+                <span class="task-number">Task 23</span>
+                <h3 class="task-title">Event Handling</h3>
+                <p class="task-description">JavaScript event handling and user interaction patterns.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-23/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 24 -->
+            <div class="task-card" data-keywords="javascript advanced">
+                <span class="task-number">Task 24</span>
+                <h3 class="task-title">Advanced JavaScript</h3>
+                <p class="task-description">Advanced JavaScript concepts including closures, promises, and async
+                    programming.</p>
+                <div class="task-tech">
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-24/index.html" class="task-link">View Task</a>
+            </div>
+
+            <!-- Task 25 -->
+            <div class="task-card" data-keywords="javascript project final">
+                <span class="task-number">Task 25</span>
+                <h3 class="task-title">Final Project</h3>
+                <p class="task-description">Comprehensive final project showcasing all learned skills and techniques.
+                </p>
+                <div class="task-tech">
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="Task-25/index.html" class="task-link">View Task</a>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <h3>No tasks found</h3>
+            <p>Try adjusting your search terms</p>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Pratik Yadav. All rights reserved.</p>
+                <p>8th Semester Internship Tasks Portfolio</p>
+                <div class="divider" style="width: 60px; margin: 20px auto;"></div>
+                <p style="font-size: 0.9rem; font-style: italic;">Jay Gaur | Shree Radharamano Vijayte</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function filterTasks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const taskCards = document.querySelectorAll('.task-card');
+            let visibleCount = 0;
+
+            taskCards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const title = card.querySelector('.task-title').textContent.toLowerCase();
+                const description = card.querySelector('.task-description').textContent.toLowerCase();
+                const taskNumber = card.querySelector('.task-number').textContent.toLowerCase();
+
+                const searchableText = `${keywords} ${title} ${description} ${taskNumber}`;
+
+                if (searchableText.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        }
+
+        // Smooth scroll to top on page load
+        window.addEventListener('load', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Add stagger animation to cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.task-card');
+            cards.forEach((card, index) => {
+                card.style.animation = `fadeIn 0.6s ease-out ${index * 0.05}s backwards`;
+            });
+        });
+    </script>
+</body>
+
+</html>

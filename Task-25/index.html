@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 25 - JavaScript Maps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .console-output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .console-output pre {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .description {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f5576c;
+        }
+
+        .description h2 {
+            color: #f5576c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task 25</h1>
+        <p class="subtitle">JavaScript Map Data Structure</p>
+
+        <div class="description">
+            <h2>Description</h2>
+            <p>This task demonstrates the JavaScript Map data structure, including setting values, getting values,
+                deleting entries, and iterating through key-value pairs.</p>
+        </div>
+
+        <div class="console-output" id="output">
+            <pre>Console Output:</pre>
+        </div>
+
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <script>
+        // Capture console output
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+
+        console.log = function (...args) {
+            originalLog.apply(console, args);
+            const pre = outputDiv.querySelector('pre');
+            pre.textContent += '\n' + args.join(' ');
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 24 - Asynchronous JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .console-output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .console-output pre {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .description {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .description h2 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .timestamp {
+            color: #888;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task 24</h1>
+        <p class="subtitle">Asynchronous JavaScript with setTimeout</p>
+
+        <div class="description">
+            <h2>Description</h2>
+            <p>This task demonstrates asynchronous behavior in JavaScript using setTimeout. Watch how "End" appears
+                before the delayed message, showing JavaScript's non-blocking execution model.</p>
+        </div>
+
+        <div class="console-output" id="output">
+            <pre>Console Output:</pre>
+        </div>
+
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <script>
+        // Capture console output with timestamps
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+        const startTime = Date.now();
+
+        console.log = function (...args) {
+            originalLog.apply(console, args);
+            const pre = outputDiv.querySelector('pre');
+            const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+            pre.textContent += '\n[' + elapsed + 's] ' + args.join(' ');
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
