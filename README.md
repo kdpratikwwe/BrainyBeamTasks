@@ -1,6 +1,6 @@
 # 🎓 8th Semester Internship Tasks Portfolio
 
-[![Live Demo](https://img.shields.io/badge/demo-online-success?style=for-the-badge)](https://yourusername.github.io/Tasks/)
+[![Live Demo](https://img.shields.io/badge/demo-online-success?style=for-the-badge)](https://kdpratikwwe.github.io/BrainyBeamTasks/)
 [![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -103,9 +103,7 @@ JavaScript Map implementation with key-value pairs.
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: **[https://yourusername.github.io/Tasks/](https://yourusername.github.io/Tasks/)**
-
-Replace `yourusername` with your actual GitHub username after deployment.
+Visit the live portfolio: **[https://kdpratikwwe.github.io/BrainyBeamTasks/](https://kdpratikwwe.github.io/BrainyBeamTasks/)**
 
 ## 💻 Local Development
 
@@ -117,8 +115,8 @@ Replace `yourusername` with your actual GitHub username after deployment.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Tasks.git
-   cd Tasks
+   git clone https://github.com/kdpratikwwe/BrainyBeamTasks.git
+   cd BrainyBeamTasks
    ```
 
 2. **Open in browser**
@@ -252,7 +250,7 @@ This project is created for educational purposes as part of my internship progra
 
 <div align="center">
 
-**[View Live Demo](https://yourusername.github.io/Tasks/)** • **[Report Bug](https://github.com/yourusername/Tasks/issues)** • **[Request Feature](https://github.com/yourusername/Tasks/issues)**
+**[View Live Demo](https://kdpratikwwe.github.io/BrainyBeamTasks/)** • **[Report Bug](https://github.com/kdpratikwwe/BrainyBeamTasks/issues)** • **[Request Feature](https://github.com/kdpratikwwe/BrainyBeamTasks/issues)**
 
 Made with ❤️ by Pratik Yadav
 
