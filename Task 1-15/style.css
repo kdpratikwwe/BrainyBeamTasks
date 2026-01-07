@@ -1,0 +1,67 @@
+body{
+    background-image: url('scene.jpeg');
+}
+.task10{
+    background-color: blue;
+}
+
+.task11 {
+      border: 2px solid black;
+    }
+
+    .item {
+      border: 1px dotted black;
+    }
+.task12 {
+      hover {
+        background-color: green;
+      }
+    }
+.text-style {
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.custom-button {
+      width: 150px;
+      height: 50px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    .custom-button:hover {
+      background-color: darkgreen;
+      color: black;
+    }
+
+    .task15 {
+      width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .column {
+      height: 200px;
+    }
+
+    .col-1 {
+      background-color: #ff9999;
+    }
+
+    .col-2 {
+      background-color: #99ccff;
+    }
+
+    .col-3 {
+      background-color: #99ff99;
+    }
+
+  
