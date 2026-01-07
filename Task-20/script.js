@@ -13,13 +13,18 @@ for(let i=0;i<student.length;i++){
     console.log("Student info at index "+i+" is: "+student[i]);
 }
 
-let num1=0; num2=1;
+function fibonacci(n) {
+  let a = 0, b = 1;
+  let result = [];
 
-for(let i=0;i<10;i++){
-    
-    num3=num1+num2;
-    console.log(num3);
-    num1=num2;
-    num2=num3;
+  for (let i = 0; i < n; i++) {
+    result.push(a);
+    let next = a + b;
+    a = b;
+    b = next;
+  }
 
+  return result;
 }
+
+console.log(fibonacci(10));
