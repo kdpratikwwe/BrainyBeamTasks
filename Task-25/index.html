@@ -95,6 +95,34 @@
             color: #555;
             line-height: 1.6;
         }
+
+        .code-snippet {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f5576c;
+        }
+
+        .code-snippet h2 {
+            color: #f5576c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-snippet code {
+            color: #9cdcfe;
+        }
     </style>
 </head>
 
@@ -107,6 +135,25 @@
             <h2>Description</h2>
             <p>This task demonstrates the JavaScript Map data structure, including setting values, getting values,
                 deleting entries, and iterating through key-value pairs.</p>
+        </div>
+
+        <div class="code-snippet">
+            <h2>📝 JavaScript Code</h2>
+            <pre><code>let myMap=new Map();
+
+myMap.set("Apple","30");
+myMap.set("Banana","20");
+myMap.set("Mango",'50');
+
+
+console.log(" ",myMap.get("Apple"));
+
+
+myMap.delete("Banana");
+
+for (let [key,value] of myMap ){
+    console.log(key+" : "+value);
+}</code></pre>
         </div>
 
         <div class="console-output" id="output">

@@ -93,6 +93,34 @@
             color: #555;
             line-height: 1.6;
         }
+
+        .code-snippet {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .code-snippet h2 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-snippet code {
+            color: #9cdcfe;
+        }
     </style>
 </head>
 
@@ -105,6 +133,26 @@
             <h2>Description</h2>
             <p>This task demonstrates the use of logical operators in JavaScript including AND (&&), OR (||), and NOT
                 (!) operators with boolean values.</p>
+        </div>
+
+        <div class="code-snippet">
+            <h2>📝 JavaScript Code</h2>
+            <pre><code>let a=true
+let b=false
+let c=true
+
+console.log(a &amp;&amp; b) //false
+console.log(a &amp;&amp; c) //true
+console.log(b &amp;&amp; c) //false
+
+
+console.log(a || b) //true  
+console.log(a||c) //true
+console.log(b || c) //true
+
+console.log(!a)
+console.log(!b)
+console.log(!c)</code></pre>
         </div>
 
         <div class="console-output" id="output">

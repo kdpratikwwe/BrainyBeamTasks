@@ -95,6 +95,36 @@
             color: #555;
             line-height: 1.6;
         }
+
+        .code-snippet {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .code-snippet h2 {
+            color: #4facfe;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .code-snippet code {
+            color: #9cdcfe;
+        }
     </style>
 </head>
 
@@ -107,6 +137,63 @@
             <h2>Description</h2>
             <p>This task demonstrates an object-oriented shopping cart system with methods to add items, remove items,
                 apply discounts, and calculate total prices using JavaScript objects and array methods.</p>
+        </div>
+
+        <div class="code-snippet">
+            <h2>📝 JavaScript Code</h2>
+            <pre><code>let cart = {
+  items: [],
+  prices: 0,
+  discounts: 0,
+  totalPrice: 0,
+
+  addItem(name, price, quantity) {
+    const item = {
+      name: name,
+      price: price,
+      quantity: quantity
+    };
+
+    this.items.push(item);
+    this.prices += price * quantity;
+    this.updateTotalPrice();
+    this.displayCart();
+  },
+
+  removeItem(name) {
+    this.items = this.items.filter(item =&gt; item.name !== name);
+    this.prices = this.items.reduce(
+      (sum, item) =&gt; sum + item.price * item.quantity,
+      0
+    );
+    this.updateTotalPrice();
+    this.displayCart();
+  },
+
+  applyDiscount(discount) {
+    this.discounts = discount;
+    this.updateTotalPrice();
+    this.displayCart();
+  },
+
+  updateTotalPrice() {
+    this.totalPrice = this.prices - (this.prices * this.discounts) / 100;
+  },
+
+  displayCart() {
+    console.log("Cart Details");
+    console.log(this.items);
+    console.log("Subtotal:", this.prices);
+    console.log("Discount:", this.discounts + "%");
+    console.log("Total Price:", this.totalPrice);
+    console.log("-------------------------");
+  }
+};
+
+cart.addItem("Book", 200, 2);
+cart.addItem("Pen", 10, 5);
+cart.applyDiscount(10);
+cart.removeItem("Pen");</code></pre>
         </div>
 
         <div class="console-output" id="output">

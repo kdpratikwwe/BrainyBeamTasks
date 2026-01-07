@@ -99,6 +99,34 @@
             font-size: 0.9rem;
             margin-left: 10px;
         }
+
+        .code-snippet {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .code-snippet h2 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-snippet code {
+            color: #9cdcfe;
+        }
     </style>
 </head>
 
@@ -111,6 +139,20 @@
             <h2>Description</h2>
             <p>This task demonstrates asynchronous behavior in JavaScript using setTimeout. Watch how "End" appears
                 before the delayed message, showing JavaScript's non-blocking execution model.</p>
+        </div>
+
+        <div class="code-snippet">
+            <h2>📝 JavaScript Code</h2>
+            <pre><code>console.log("Start");
+
+setTimeout(function () {
+  console.log("This message appears after 3 seconds");
+}, 3000);
+
+console.log("End");
+
+
+//Asynchronus behavior of JavaScript</code></pre>
         </div>
 
         <div class="console-output" id="output">
