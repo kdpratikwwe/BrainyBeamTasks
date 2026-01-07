@@ -95,6 +95,34 @@
             color: #555;
             line-height: 1.6;
         }
+
+        .code-snippet {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f5576c;
+        }
+
+        .code-snippet h2 {
+            color: #f5576c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-snippet code {
+            color: #9cdcfe;
+        }
     </style>
 </head>
 
@@ -107,6 +135,39 @@
             <h2>Description</h2>
             <p>This task demonstrates JavaScript for loops with arrays, including iterating through numeric arrays,
                 student information, and generating Fibonacci sequences.</p>
+        </div>
+
+        <div class="code-snippet">
+            <h2>📝 JavaScript Code</h2>
+            <pre><code>for(let i=0;i&lt;5;i++){
+    console.log("Iteration number: "+i);
+}
+
+let a=[10,20,30,40,50];
+for(let i=0;i&lt;a.length;i++){
+    console.log("Array element at index "+i+" is: "+a[i]);
+}
+
+let student=['John', 'Doe', 25, 'New York']
+for(let i=0;i&lt;student.length;i++){
+    console.log("Student info at index "+i+" is: "+student[i]);
+}
+
+function fibonacci(n) {
+  let a = 0, b = 1;
+  let result = [];
+
+  for (let i = 0; i &lt; n; i++) {
+    result.push(a);
+    let next = a + b;
+    a = b;
+    b = next;
+  }
+
+  return result;
+}
+
+console.log(fibonacci(10));</code></pre>
         </div>
 
         <div class="console-output" id="output">
