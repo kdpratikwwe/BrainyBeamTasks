@@ -17,7 +17,6 @@ let num1=0; num2=1;
 
 for(let i=0;i<10;i++){
     
-    console.log(num1);
     num3=num1+num2;
     console.log(num3);
     num1=num2;
